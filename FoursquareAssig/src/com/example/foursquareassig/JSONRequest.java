@@ -14,6 +14,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.graphics.drawable.Drawable;
+
 /*make http request to foursquare and get the result 
  * as JSON object 
  */
@@ -71,9 +73,24 @@ public class JSONRequest {
 	            latitude[i] = latitude2;
 	            longitude[i] = longitude2;
 	            
+	            
+	         // image
+				JSONArray categories = childJSONObject.getJSONArray("categories");
+				for (int j = 0; j < categories.length(); j++) {
+					JSONObject secondChild = categories.getJSONObject(j);
+					JSONObject icon = secondChild.getJSONObject("icon");
+					String prefix = icon.getString("prefix");
+					prefix = prefix.substring(0, prefix.length() - 1);
+				
+					String imagelink = prefix + ".png";
+					DrawableManager dm = new DrawableManager();
+					Drawable pic = null;
+					pic = dm.fetchDrawable(imagelink);
+					//image.setImageDrawable(pic);
 			}
-			
-		} catch (JSONException e) {
+			}}
+		
+		 catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
