@@ -1,0 +1,29 @@
+<resources>
+
+    <string name="app_name">FoursquareAssig</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">App Name</string>
+
+    <string-array name="search">
+        <item>Food</item>
+        <item>Cinema</item>
+        <item>Shoping</item>
+        <item>Art</item>
+    </string-array>
+    <string-array name="distance">
+        <item>100m</item>
+        <item>300m</item>
+        <item>1000m</item>
+        <item>2000m</item>
+    </string-array>
+
+    <string name="title_activity_check_int_gps">CheckIntGps</string>
+    <string name="title_activity_info">Info</string>
+    <string name="title_activity_map">Map</string>
+    <string name="title_activity_pin_point">PinPoint</string>
+    <string name="title_activity_kot">Kot</string>
+    <string name="title_activity_map_view">MapView</string>
+    <string name="title_activity_show_map">ShowMap</string>
+
+</resources>
