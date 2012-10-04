@@ -29,11 +29,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:text="Search venues nearby"
+            android:text="@string/search"
             android:textColor="#FFFFFF"
             android:textSize="15sp"
             android:typeface="serif" />
-
     </RelativeLayout>
 
     <RelativeLayout
@@ -52,7 +51,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="22dp"
-            android:text="Instructions"
+            android:text="@string/inst"
             android:typeface="serif" />
 
         <TextView
@@ -63,7 +62,7 @@
             android:layout_alignBottom="@+id/textView2"
             android:layout_alignParentRight="true"
             android:layout_marginRight="72dp"
-            android:text="About us"
+            android:text="@string/about"
             android:typeface="serif" />
 
         <ImageView
@@ -125,7 +124,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/header"
-        android:text="Category:"
+        android:text="@string/category"
         android:typeface="serif" />
 
     <TextView
@@ -135,7 +134,7 @@
         android:layout_alignBaseline="@+id/textView3"
         android:layout_alignBottom="@+id/textView3"
         android:layout_alignLeft="@+id/Spinner2"
-        android:text="Radius:" />
+        android:text="@string/radius" />
 
     <ListView
         android:id="@+id/listview"
@@ -145,7 +144,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/spinner1" >
-
     </ListView>
 
 </RelativeLayout>
