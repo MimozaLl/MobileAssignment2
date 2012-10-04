@@ -51,15 +51,18 @@ public class ShowMap extends MapActivity implements LocationListener {
        
         map=(MapView)findViewById(R.id.mvMain);
         map.setBuiltInZoomControls(true);
+      /*
         Intent i = getIntent();
-        int p = i.getIntExtra(Main.MESSAGE, -1);
-        //Toast.makeText(this, p, Toast.LENGTH_SHORT).show();
-        //plat = jr.latitude[p];
-       // plng = jr.longitude[p];
+        String p = i.getStringExtra("position");
+        int index = Integer.parseInt(p);
         
-       // alat = (int) (plat*1E6);
-       // along = (int) (plng*1E6);
+        //Toast.makeText(this, index, Toast.LENGTH_SHORT).show();
+        plat = jr.latitude[index];
+        plng = jr.longitude[index];
         
+        alat = (int) (plat*1E6);
+        along = (int) (plng*1E6);
+        */
         //Current Location
         lm=(LocationManager)getSystemService(Context.LOCATION_SERVICE);
         Criteria c =new Criteria();

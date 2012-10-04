@@ -35,7 +35,7 @@ public class Main extends Activity {
 	public String MicrophoneResult;
 	public static final String [] CategoryId = {"4d4b7105d754a06374d81259", "4bf58dd8d48988d17f941735", "4bf58dd8d48988d1fd941735", "4d4b7104d754a06370d81259" };
 	public static final String [] keywords = {"food", "cinema", "shopping", "art" };
-	public static final String [] Search = {"Food", "Cinem", "Shopping", "Art" };
+	public static final String [] Search = {"Food", "Cinema", "Shopping", "Art" };
 	public String categoryId;
 	public String radius;
 	public double lat = 60.7943;
@@ -49,7 +49,6 @@ public class Main extends Activity {
 	public ConnectivityManager cm;
 	public NetworkInfo info;
 	
-    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);	
@@ -78,17 +77,24 @@ public class Main extends Activity {
                // String restaurant = ((TextView)view.findViewById(R.id.txt)).getText().toString();
                // String dis=((TextView)view.findViewById(R.id.pl)).getText().toString();
                 // Launching new Activity on selecting single List Item
+  				String pos = "123";
+  				String p = ""+position;
+  				
                 Intent i = new Intent(getApplicationContext(), ShowMap.class);
-                int p = listView.getSelectedItemPosition();
-                i.putExtra(MESSAGE, p);
-             //  i.putExtra("p_longitutde", lng);
+                
+                i.putExtra("position", p);
+                //  i.putExtra("p_longitutde", lng);
                 // sending data to new activity
-               // i.putExtra("restaurant", restaurant);
+                // i.putExtra("restaurant", restaurant);
                 startActivity(i);
+                
+                
 		}
     	}); 
     	
+    	
     }
+    
     //MICROPHONE
     @Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -149,7 +155,7 @@ public class Main extends Activity {
 					}
 					Spinner s2 = (Spinner) findViewById(R.id.Spinner2);
 					radius = s2.getSelectedItem().toString();
-
+					radius = radius.substring(0,radius.length()-1);
 					urlString = API_URL + "/venues/search?ll=" + slat + "," + slon + "&intent=browse&radius=" + radius + "&categoryId=" + categoryId + "&client_id=" + CLIENT_ID + "&client_secret=" + CLIENT_SECRET + "&v=20111218";
 					List<HashMap<String,String>> list;
 					jr = new JSONRequest();
