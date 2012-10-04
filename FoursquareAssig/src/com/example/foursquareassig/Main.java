@@ -78,13 +78,23 @@ public class Main extends Activity {
                // String restaurant = ((TextView)view.findViewById(R.id.txt)).getText().toString();
                // String dis=((TextView)view.findViewById(R.id.pl)).getText().toString();
                 // Launching new Activity on selecting single List Item
+  				
+  				TextView pos=(TextView)findViewById(R.id.textView1);
+  				String pos2=""+position;
+  				pos.setText(pos2);
+  				
+  				
                 Intent i = new Intent(getApplicationContext(), ShowMap.class);
+                 
                 int p = listView.getSelectedItemPosition();
                 i.putExtra(MESSAGE, p);
              //  i.putExtra("p_longitutde", lng);
                 // sending data to new activity
                // i.putExtra("restaurant", restaurant);
                 startActivity(i);
+                
+                
+               
 		}
     	}); 
     	
