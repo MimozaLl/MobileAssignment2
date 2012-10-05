@@ -191,12 +191,12 @@ public class Main extends Activity {
 				listView.setAdapter(adapter);
 			} else {
 				Toast.makeText(this,
-						"Please check your internet connection and try again.",
+						R.string.int_connection,
 						Toast.LENGTH_SHORT).show();
 			}
 		} else {
 			Toast.makeText(this,
-					"Please check your internet connection and try again.",
+					R.string.int_connection,
 					Toast.LENGTH_SHORT).show();
 		}
 	}
@@ -211,12 +211,12 @@ public class Main extends Activity {
 				startActivityForResult(i, check);
 			} else {
 				Toast.makeText(this,
-						"Please check your internet connection and try again.",
+							R.string.int_connection,
 						Toast.LENGTH_SHORT).show();
 			}
 		} else {
 			Toast.makeText(this,
-					"Please check your internet connection and try again.",
+					R.string.int_connection,
 					Toast.LENGTH_SHORT).show();
 		}
 	}
