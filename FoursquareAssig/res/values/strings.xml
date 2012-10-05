@@ -31,5 +31,7 @@
     <string name="inst">Instructions</string>
     <string name="search">Search for venues nearby</string>
     <string name="int_connection">Please check your internet connection and try again.</string>
+    <string name="novenue">Result not found!</string>
+    
 
 </resources>
