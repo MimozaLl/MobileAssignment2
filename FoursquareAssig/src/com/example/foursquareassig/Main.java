@@ -139,7 +139,7 @@ public class Main extends Activity {
 				break;
 				//shemsia e ka ndryshu kete pjese
 			case 4:
-				Toast.makeText(this,R.string.novenue,Toast.LENGTH_SHORT).show();
+				Toast.makeText(this,R.string.novenue,Toast.LENGTH_LONG).show();
 				break;
 			}
 			String sradius = "1000";
@@ -189,7 +189,7 @@ public class Main extends Activity {
 				}
 				else//shemsia apet
 				{
-					Toast.makeText(this,R.string.novenue,Toast.LENGTH_SHORT).show();
+					Toast.makeText(this,R.string.novenue,Toast.LENGTH_LONG).show();
 				}
 				
 				
