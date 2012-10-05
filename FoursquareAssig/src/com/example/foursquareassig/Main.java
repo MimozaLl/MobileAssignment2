@@ -64,15 +64,15 @@ public class Main extends Activity {
 		FillSpinner(R.id.spinner1, R.array.search);
 		FillSpinner(R.id.Spinner2, R.array.distance);
 		final ListView listView = (ListView) findViewById(R.id.listview);
-		
-		lm=(LocationManager)getSystemService(Context.LOCATION_SERVICE);
-        Criteria c =new Criteria();
-        towers =lm.getBestProvider(c, false);
-        Location location=lm.getLastKnownLocation(towers);
-    	lat = location.getLatitude();
-    	lon = location.getLongitude();
-    	slat = Double.toString(lat);
-    	slon = Double.toString(lon);
+
+		lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+		Criteria c = new Criteria();
+		towers = lm.getBestProvider(c, false);
+		Location location = lm.getLastKnownLocation(towers);
+		lat = location.getLatitude();
+		lon = location.getLongitude();
+		slat = Double.toString(lat);
+		slon = Double.toString(lon);
 
 		// int radius = 500; //Convert to String
 		// String categoryId = "4d4b7105d754a06374d81259";
@@ -102,7 +102,6 @@ public class Main extends Activity {
 				String p = "" + position;
 
 				Intent i = new Intent(getApplicationContext(), ShowMap.class);
-
 
 				i.putExtra("position", p);
 				i.putExtra("url", urlString);
@@ -140,8 +139,7 @@ public class Main extends Activity {
 			case 3:
 				categoryId = CategoryId[3];
 				break;
-			// shemsia e ka ndryshu kete pjese
-			case 4:
+			default:
 				Toast.makeText(this, R.string.novenue, Toast.LENGTH_LONG)
 						.show();
 				break;
@@ -164,8 +162,6 @@ public class Main extends Activity {
 			// Setting the adapter to the listView
 			listView.setAdapter(adapter);
 
-			// lv.setAdapter(new
-			// ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,results));
 		}
 
 		super.onActivityResult(requestCode, resultCode, data);
@@ -190,8 +186,7 @@ public class Main extends Activity {
 				if (Search[3].equals(category)) {
 					categoryId = CategoryId[3];
 
-				} else// shemsia apet
-				{
+				} else {
 					Toast.makeText(this, R.string.novenue, Toast.LENGTH_LONG)
 							.show();
 				}
