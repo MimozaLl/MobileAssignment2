@@ -62,6 +62,7 @@ public final class R {
         public static final int category=0x7f04000b;
         public static final int hello_world=0x7f040001;
         public static final int inst=0x7f04000e;
+        public static final int int_connection=0x7f040010;
         public static final int menu_settings=0x7f040002;
         public static final int radius=0x7f04000c;
         public static final int search=0x7f04000f;
