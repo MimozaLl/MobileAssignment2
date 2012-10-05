@@ -8,14 +8,16 @@ import android.graphics.drawable.Drawable;
 import com.google.android.maps.ItemizedOverlay;
 import com.google.android.maps.OverlayItem;
 
-public class PinPoint extends ItemizedOverlay <OverlayItem> {
+public class PinPoint extends ItemizedOverlay<OverlayItem> {
 
-	private ArrayList<OverlayItem> pinpoints =new ArrayList<OverlayItem>();
+	private ArrayList<OverlayItem> pinpoints = new ArrayList<OverlayItem>();
 	private Context c;
+
 	public PinPoint(Drawable defaultMarker) {
 		super(boundCenter(defaultMarker));
 		// TODO Auto-generated constructor stub
 	}
+
 	public PinPoint(Drawable m, Context context) {
 		this(m);
 		c = context;
@@ -33,8 +35,7 @@ public class PinPoint extends ItemizedOverlay <OverlayItem> {
 		return pinpoints.size();
 	}
 
-	public void insertPinpoint(OverlayItem item)
-	{
+	public void insertPinpoint(OverlayItem item) {
 		pinpoints.add(item);
 		this.populate();
 	}
