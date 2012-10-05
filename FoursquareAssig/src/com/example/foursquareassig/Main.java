@@ -123,6 +123,10 @@ public class Main extends Activity {
 			case 3:
 				categoryId = CategoryId[3];
 				break;
+				//shemsia e ka ndryshu kete pjese
+			case 4:
+				Toast.makeText("There is not any venue available!").show();
+				break;
 			}
 			String sradius = "1000";
 			urlString = API_URL + "/venues/search?ll=" + slat + "," + slon
