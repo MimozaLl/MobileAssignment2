@@ -48,7 +48,7 @@ public class Main extends Activity {
 	public double lat;
 	public double lon;
 	public String slat;
-    public String slon;
+	public String slon;
 
 	public static String[] from = { "txt", "pl" };
 	// Id-s of views in listview_layout
@@ -103,7 +103,10 @@ public class Main extends Activity {
 
 				Intent i = new Intent(getApplicationContext(), ShowMap.class);
 
+
 				i.putExtra("position", p);
+				i.putExtra("url", urlString);
+
 				// i.putExtra("p_longitutde", lng);
 				// sending data to new activity
 				// i.putExtra("restaurant", restaurant);
@@ -137,9 +140,10 @@ public class Main extends Activity {
 			case 3:
 				categoryId = CategoryId[3];
 				break;
-				//shemsia e ka ndryshu kete pjese
+			// shemsia e ka ndryshu kete pjese
 			case 4:
-				Toast.makeText(this,R.string.novenue,Toast.LENGTH_LONG).show();
+				Toast.makeText(this, R.string.novenue, Toast.LENGTH_LONG)
+						.show();
 				break;
 			}
 			String sradius = "1000";
@@ -177,22 +181,21 @@ public class Main extends Activity {
 				}
 				if (Search[1].equals(category)) {
 					categoryId = CategoryId[1];
-					
+
 				}
 				if (Search[2].equals(category)) {
 					categoryId = CategoryId[2];
-					
+
 				}
 				if (Search[3].equals(category)) {
 					categoryId = CategoryId[3];
-					
-				}
-				else//shemsia apet
+
+				} else// shemsia apet
 				{
-					Toast.makeText(this,R.string.novenue,Toast.LENGTH_LONG).show();
+					Toast.makeText(this, R.string.novenue, Toast.LENGTH_LONG)
+							.show();
 				}
-				
-				
+
 				Spinner s2 = (Spinner) findViewById(R.id.Spinner2);
 				radius = s2.getSelectedItem().toString();
 				radius = radius.substring(0, radius.length() - 1);
@@ -212,14 +215,12 @@ public class Main extends Activity {
 				// Setting the adapter to the listView
 				listView.setAdapter(adapter);
 			} else {
-				Toast.makeText(this,
-						R.string.int_connection,
+				Toast.makeText(this, R.string.int_connection,
 						Toast.LENGTH_SHORT).show();
 			}
 		} else {
-			Toast.makeText(this,
-					R.string.int_connection,
-					Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, R.string.int_connection, Toast.LENGTH_SHORT)
+					.show();
 		}
 	}
 
@@ -232,14 +233,12 @@ public class Main extends Activity {
 				i.putExtra(RecognizerIntent.EXTRA_PROMPT, "Speak!");
 				startActivityForResult(i, check);
 			} else {
-				Toast.makeText(this,
-							R.string.int_connection,
+				Toast.makeText(this, R.string.int_connection,
 						Toast.LENGTH_SHORT).show();
 			}
 		} else {
-			Toast.makeText(this,
-					R.string.int_connection,
-					Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, R.string.int_connection, Toast.LENGTH_SHORT)
+					.show();
 		}
 	}
 

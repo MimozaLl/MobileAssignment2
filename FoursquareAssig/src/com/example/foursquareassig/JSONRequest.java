@@ -88,6 +88,8 @@ public class JSONRequest {
 					Drawable pic = null;
 					pic = dm.fetchDrawable(imagelink);
 					// image.setImageDrawable(pic);
+					Drawable [] draw =new Drawable[200];
+					draw[j]=pic;
 				}
 			}
 		}
