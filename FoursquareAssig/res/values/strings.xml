@@ -8,8 +8,8 @@
     <string-array name="search">
         <item>Food</item>
         <item>Cinema</item>
-        <item>Shoping</item>
-        <item>Art</item>
+        <item>Shopping</item>
+        <item>Art and Entertainment</item>
     </string-array>
     <string-array name="distance">
         <item>100m</item>
