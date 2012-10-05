@@ -139,7 +139,7 @@ public class Main extends Activity {
 				break;
 				//shemsia e ka ndryshu kete pjese
 			case 4:
-				Toast.makeText("There is not any venue available!").show();
+				Toast.makeText("Resluts not found!").show();
 				break;
 			}
 			String sradius = "1000";
@@ -186,6 +186,10 @@ public class Main extends Activity {
 				if (Search[3].equals(category)) {
 					categoryId = CategoryId[3];
 					
+				}
+				else//shemsia apet
+				{
+					Toast.makeText("Resluts not found!").show();
 				}
 				
 				
