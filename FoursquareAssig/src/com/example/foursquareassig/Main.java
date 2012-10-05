@@ -157,6 +157,20 @@ public class Main extends Activity {
 				if (Search[0].equals(category)) {
 					categoryId = CategoryId[0];
 				}
+				if (Search[1].equals(category)) {
+					categoryId = CategoryId[1];
+					
+				}
+				if (Search[2].equals(category)) {
+					categoryId = CategoryId[2];
+					
+				}
+				if (Search[3].equals(category)) {
+					categoryId = CategoryId[3];
+					
+				}
+				
+				
 				Spinner s2 = (Spinner) findViewById(R.id.Spinner2);
 				radius = s2.getSelectedItem().toString();
 				radius = radius.substring(0, radius.length() - 1);
