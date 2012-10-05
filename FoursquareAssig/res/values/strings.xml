@@ -30,5 +30,6 @@
     <string name="about">About us</string>
     <string name="inst">Instructions</string>
     <string name="search">Search for venues nearby</string>
+    <string name="int_connection">Please check your internet connection and try again.</string>
 
 </resources>
