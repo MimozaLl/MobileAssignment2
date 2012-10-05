@@ -30,6 +30,7 @@
     <string name="about">Über uns</string>
     <string name="inst">Anleitung</string>
     <string name="search">Suche nach Veranstaltungsorten in der Nähe</string>
+    <string name="int_connection">Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.</string>
     
 
 </resources>
