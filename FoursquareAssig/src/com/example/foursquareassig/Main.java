@@ -8,6 +8,9 @@ import java.util.List;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -40,10 +43,12 @@ public class Main extends Activity {
 	public static final String[] Search = { "Food", "Cinema", "Shopping", "Art" };
 	public String categoryId;
 	public String radius;
-	public double lat = 60.7943;
-	public double lon = 10.6889;
-	String slat = Double.toString(lat);
-	String slon = Double.toString(lon);
+	public LocationManager lm;
+	public String towers;
+	public double lat;
+	public double lon;
+	public String slat;
+    public String slon;
 
 	public static String[] from = { "txt", "pl" };
 	// Id-s of views in listview_layout
@@ -59,6 +64,15 @@ public class Main extends Activity {
 		FillSpinner(R.id.spinner1, R.array.search);
 		FillSpinner(R.id.Spinner2, R.array.distance);
 		final ListView listView = (ListView) findViewById(R.id.listview);
+		
+		lm=(LocationManager)getSystemService(Context.LOCATION_SERVICE);
+        Criteria c =new Criteria();
+        towers =lm.getBestProvider(c, false);
+        Location location=lm.getLastKnownLocation(towers);
+    	lat = location.getLatitude();
+    	lon = location.getLongitude();
+    	slat = Double.toString(lat);
+    	slon = Double.toString(lon);
 
 		// int radius = 500; //Convert to String
 		// String categoryId = "4d4b7105d754a06374d81259";

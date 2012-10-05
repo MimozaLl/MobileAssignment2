@@ -26,7 +26,7 @@ public class ShowMap extends MapActivity implements LocationListener {
 	MapView map;
 	long start;
 	long stop;
-	public static JSONRequest jr = new JSONRequest();
+	public JSONRequest jr2;
 	MyLocationOverlay compass;
 	MapController controller;
 	int x,y;
@@ -36,14 +36,12 @@ public class ShowMap extends MapActivity implements LocationListener {
 	List<Overlay> overlayList;
 	LocationManager lm;
 	String towers;
-	int lat =0;
-    int lng= 0;
-    int a = 60898388;
-    int b = 10569580;
-    int alat=60298388;
-    int along=10069580;
-    double plat;
-    double plng;
+	public int lat;
+    public int lng;
+    public int alat;
+    public int along;
+    public double plat;
+    public double plng;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,34 +49,42 @@ public class ShowMap extends MapActivity implements LocationListener {
        
         map=(MapView)findViewById(R.id.mvMain);
         map.setBuiltInZoomControls(true);
-      /*
+      
         Intent i = getIntent();
         String p = i.getStringExtra("position");
-        int index = Integer.parseInt(p);
+        String urlString = i.getStringExtra("url");
+        int in = Integer.parseInt(p);
         
-        //Toast.makeText(this, index, Toast.LENGTH_SHORT).show();
-        plat = jr.latitude[index];
-        plng = jr.longitude[index];
+        jr2 = new JSONRequest();
+        jr2.getJSONfromURL(urlString);
+        plat = jr2.latitude[in];
+        plng = jr2.longitude[in];
         
         alat = (int) (plat*1E6);
         along = (int) (plng*1E6);
-        */
+        
         //Current Location
         lm=(LocationManager)getSystemService(Context.LOCATION_SERVICE);
         Criteria c =new Criteria();
         towers =lm.getBestProvider(c, false);
         Location location=lm.getLastKnownLocation(towers);
-    	lat = (int) (location.getLatitude()*1E6);
+        
+    	
+        lat = (int) (location.getLatitude()*1E6);
     	lng = (int) (location.getLongitude()*1E6);
+    	//lat = 68040333;
+    	//lng = 10234556;
         overlayList =map.getOverlays();
         compass= new MyLocationOverlay(ShowMap.this,map);
         overlayList.add(compass);
         controller = map.getController();
         GeoPoint point = new GeoPoint(lat, lng);
+        
         controller.animateTo(point);
+        
         controller.setZoom(15);
         d = getResources().getDrawable(R.drawable.marker);
-
+        
         GeoPoint ourLocation=new GeoPoint(lat,lng);
         OverlayItem overlayItem =new OverlayItem(ourLocation, "Hello","Hello2");
    		PinPoint custom =new PinPoint(d, ShowMap.this);
@@ -132,6 +138,7 @@ public class ShowMap extends MapActivity implements LocationListener {
    		PinPoint custom1 =new PinPoint(d, ShowMap.this);
    		custom1.insertPinpoint(overlayItem);
    		overlayList.add(custom1);
+   		controller.animateTo(ourLocation);
 	}
 
 	public void onProviderDisabled(String provider) {
