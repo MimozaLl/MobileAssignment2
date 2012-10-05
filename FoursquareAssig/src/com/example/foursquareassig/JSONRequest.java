@@ -68,7 +68,7 @@ public class JSONRequest {
 				longitude2 = location.getDouble("lng");
 				HashMap<String, String> hm = new HashMap<String, String>();
 				hm.put("txt", name2);
-				hm.put("pl", "Distance: " + distance2);
+				hm.put("pl", "Distance: " + distance2 + "m");
 				aList.add(hm);
 
 				latitude[i] = latitude2;
